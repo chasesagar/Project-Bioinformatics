@@ -1,0 +1,189 @@
+{% extends "base.html" %} <!-- Extending base.html file and including it here -->
+{% load static %}
+{% block title %}<title>Chase Biology</title> {% endblock %} <!-- Main title of the page -->
+
+<!-- here we are not using body django content because we want default content here -->
+{% block body %}<body class="landing-page sidebar-collapse">{% endblock %}
+
+{% block content %}
+  <div class="page-header" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div id="particles-js"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-6 text-center" data-scrollax=" properties: { translateY: '10%' }">
+            <h1 style="font-family: 'Work Sans', Arial, sans-serif;padding-bottom: 40px;">We love to create<strong style="font-weight: 600;"> Bioinformatics</strong> tools</h1>
+            <p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="{% url 'contact' %}" class="btn btn-primary btn-outline-white btn-lg px-5 py-3">Get in touch</a></p>
+          </div>
+        </div>
+      </div>
+  </div>
+  <div class="main main-raised">
+    <div class="container">
+      <div class="section text-center">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <span class="subheading">Services &amp; tools</span>
+            <h2 style="font-weight: 600;">Web &amp; Mobile tools, bring your bioinformatics ideas to life</h2>
+          </div>
+        </div>
+        <div class="features">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-info">
+                  <i class="material-icons">face</i>
+                </div>
+                <h4 class="info-title">Basic</h4>
+                <p>Provide basic sequence analysis like sequence length, GC content, nucleotide count, and molecular weight for DNA, RNA, or Protein sequences. </p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-success">
+                  <i class="material-icons">view_agenda</i>
+                </div>
+                <h4 class="info-title">Translate</h4>
+                <p>Translate is a tool which allows the translation of a nucleotide (DNA/RNA) sequence to a 3 frame protein sequence.
+                  .</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-warning">
+                  <i class="material-icons">extension</i>
+                </div>
+                <h4 class="info-title">Reverse Complement</h4>
+                <p>Reverse Complement converts a DNA sequence into its reverse, complement, or reverse-complement counterpart.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="features">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-rose">
+                  <i class="material-icons">note</i>
+                </div>
+                <h4 class="info-title">Molecular Weight</h4>
+                <p>Accepts DNA, RNA, Protein sequences and calculates molecular weight. With advanced customize options.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-default">
+                  <i class="material-icons">add_circle</i>
+                </div>
+                <h4 class="info-title">Transcription</h4>
+                <p>In transcription, the DNA sequence of a gene is transcribed (copied out) to make an RNA molecule.</p>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="info">
+                <div class="icon icon-danger">
+                  <i class="material-icons">fingerprint</i>
+                </div>
+                <h4 class="info-title">Back Transcription</h4>
+                <p>Back transcription, this tool transcribe RNA sequence of a gene (copied out) to make an DNA molecule.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto text-center">
+          <span class="subheading"><strong>More tools Coming Soon ...</strong></span>
+        </div>
+      </div>
+        <div class="features-4">
+          <div class="row">
+            <div class="col-md-6 ml-auto mr-auto text-center">
+              <h2 style="font-weight: 600;">Your research will be much Easier &amp; Faster</h2>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-lg-3 col-md-12 ml-auto">
+              <div class="info info-horizontal">
+                <div class="icon icon-info">
+                  <i class="material-icons">extension</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Hundreds of Options</h4>
+                  <p>Provide many customisable option for standard bioinformatics tools.</p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-danger">
+                  <i class="material-icons">watch_later</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Fast &amp; Accurate Results</h4>
+                  <p>Program and algorithms specifically designed for fast computing with new and best technologies possible.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-12">
+              <div class="phone-container">
+                <img src="{% static 'img/sections/iphonesag.png' %}">
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-12 mr-auto">
+              <div class="info info-horizontal">
+                <div class="icon icon-primary">
+                  <i class="material-icons">dashboard</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Minimalist Design</h4>
+                  <p>A collections of bioinformatics tools with best possible visuals &amp; design to enhance your research experience.</p>
+                </div>
+              </div>
+              <div class="info info-horizontal">
+                <div class="icon icon-success">
+                  <i class="material-icons">child_friendly</i>
+                </div>
+                <div class="description">
+                  <h4 class="info-title">Easy to Use</h4>
+                  <p>A web portal designed for lots of easily understandable information and processes for professionals as well for beginners</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <div class="section section-contacts">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="text-center" style="font-weight: 600;">Work with us</h2>
+            <form class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Your Name</label>
+                    <input type="email" class="form-control">
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Your Email</label>
+                    <input type="email" class="form-control">
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleMessage" class="bmd-label-floating">Your Message</label>
+                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-4 ml-auto mr-auto text-center">
+                  <button class="btn btn-primary btn-raised">
+                    Send Message
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+<!-- End of home page content -->

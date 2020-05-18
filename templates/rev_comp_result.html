@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}<title>Translate Result</title> {% endblock %}
+
+{% block body %}<body class="landing-page sidebar-collapse">{% endblock %}
+
+{% block content %}
+
+  <div class="page-header header-filter header-small" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h1 style="font-family: 'Work Sans', Arial, sans-serif;"><strong style="font-weight: 600;">Resu</strong>lt</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="contact-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12  ml-auto mr-auto">
+
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category" style="font-weight: bold;">
+                  DNA Sequence
+                </h4>
+                <h6 style="font-size: 14px;">
+                  <strong  class="text-success">3' </strong> {{seq}}<strong  class="text-success"> 5' </strong>
+                </h6>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category" style="font-weight: bold;">
+                  Reverse
+                </h4>
+                <h6 style="font-size: 14px;">
+                  <strong  class="text-success">5' </strong> {{reverse}}<strong  class="text-success"> 3' </strong>
+                </h6>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category" style="font-weight: bold;">
+                  Complement
+                </h4>
+                <h6 style="font-size: 14px;">
+                  <strong  class="text-success">5' </strong> {{comp}}<strong  class="text-success"> 3' </strong>
+                </h6>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category" style="font-weight: bold;">
+                  Reverse Complement
+                </h4>
+                <h6 style="font-size: 14px;">
+                  <strong  class="text-success">3' </strong> {{revcomp}}<strong  class="text-success"> 5' </strong>
+                </h6>
+              </div>
+            </div>
+            <div>
+              <form action="{% url 'rev-comp' %}">
+                <div class="submit text-center" style="padding-top: 40px;">
+                  <input type="submit"  class="btn btn-danger btn-raised btn-round" value="Calaulate New">
+                </div>
+              </form>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+{% endblock %}

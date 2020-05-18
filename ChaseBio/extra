@@ -1,0 +1,218 @@
+def CustomPageView(request):
+    if request.method == "POST":
+        dna_seq = request.POST.get('seq')
+        countnuc = validateseq(dna_seq)
+        
+        if countnuc == "error":
+            messages.info(request,'Invalid Sequence')
+            return render(request, "profile-page.html")
+
+        else:
+            seq = countnuc[0] # Valid capital sequence 
+            GC_Content = gc_content(seq)
+            molwt = ("%.2f" % molecular_weight(seq,"DNA"))
+            a =countnuc[1]
+            c =countnuc[2]
+            g =countnuc[3]
+            t =countnuc[4]
+            seq_length = len(seq)
+            return render( request, "profile-page.html",{
+                'seq':seq ,
+                'a':a ,
+                'c':c ,
+                'g':g ,
+                't':t ,
+                'seq_length':seq_length ,
+                'GC_Content':GC_Content ,
+                'molecular_weight':molwt,
+                })
+      
+    else:
+        return render( request, "profile-page.html" )
+
+          <div class="tab-pane rna" id="rna">
+            <div class="row">
+              <div class="col-md-7 ml-auto mr-auto ">
+                <h4 class="title">RNA Sequence</h4>
+                {% for message in messages %}
+                <h5 class="text-danger">{{message}}</h5>
+                {% endfor %}
+                <form action="" method="POST" id="rna">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <textarea name="seq" id="" cols="30" rows="7" class="form-control" placeholder="Please Enter DNA Sequence">{{seq}}</textarea>
+                  </div>
+                  <h5 style="padding-left: 2%;">Sequence Length <strong>{{seq_length}}</strong></h5>
+                  <div class="form-group">
+                    <input type="submit" value="Calculate" class="btn btn-primary py-3 px-5">
+                  </div>
+                </form> 
+              </div>
+
+              <div class="col-md-2 mr-auto ml-auto stats">
+                <h4 class="title">Nucleobases</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{a}}</b> Adenine </li>
+                  <li><b>{{c}}</b> Cytosine</li>
+                  <li><b>{{g}}</b> Guanine</li>
+                  <li><b>{{t}}</b> Uracil</li>
+                </ul>
+                <hr>
+                <h4 class="title">GC Content</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{GC_Content}}</b> % </li>
+                </ul>
+                <hr>
+                <h4 class="title">Mol. Weight</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{molecular_weight}}</b> Da</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+      <!-- protein pill -->
+          <div class="tab-pane protein" id="protein">
+            <div class="row">
+              <div class="col-md-7 ml-auto mr-auto ">
+                <h4 class="title">Protein Sequence</h4>
+                {% for message in messages %}
+                <h5 class="text-danger">{{message}}</h5>
+                {% endfor %}
+                <form action="" method="POST" id="protein">
+                  {% csrf_token %}
+                  <div class="form-group">
+                    <textarea name="seq" id="" cols="30" rows="7" class="form-control" placeholder="Please Enter DNA Sequence">{{seq}}</textarea>
+                  </div>
+                  <h5 style="padding-left: 2%;">Sequence Length <strong>{{seq_length}}</strong></h5>
+                  <div class="form-group">
+                    <input type="submit" value="Calculate" class="btn btn-primary py-3 px-5">
+                  </div>
+                </form> 
+              </div>
+
+              <div class="col-md-2 mr-auto ml-auto stats">
+                <h4 class="title">Nucleobases</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{a}}</b> Adenine </li>
+                  <li><b>{{c}}</b> Cytosine</li>
+                  <li><b>{{g}}</b> Guanine</li>
+                  <li><b>{{t}}</b> Thymine</li>
+                </ul>
+                <hr>
+                <h4 class="title">GC Content</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{GC_Content}}</b> % </li>
+                </ul>
+                <hr>
+                <h4 class="title">Mol. Weight</h4>
+                <ul class="list-unstyled">
+                  <li><b>{{molecular_weight}}</b> Da</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+  <div class="page-header header-filter header-small" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+          <div class="col-md-6 text-center" data-scrollax=" properties: { translateY: '70%' }">
+            <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><strong>Trans</strong>late</h1>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
+#style.css 12-05-2020
+  form-group --> form-groups
+  form-control -->form-controls
+
+
+<form role="form" id="contact-form" action="" method="POST" style="padding-top: 40px; padding-left: 20px;">
+              {% for message in messages %}
+                <h5 class="text-danger">{{message}}</h5>
+              {% endfor %}
+              {% csrf_token %}
+              <div class="form-group label-floating">
+                <label class="form-control-label bmd-label-floating" for="message"> Please enter DNA or RNA sequence</label>
+                <textarea class="form-control" rows="7" id="message" name="sequence" required></textarea>
+                <span class="bmd-help">Without Spacing</span>
+              </div>
+              <div class="row">
+                <h4>Sequence Type</h4>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="DNA" id="exampleRadios1" value="option1" checked>
+                  DNA
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>              
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="DNA" id="exampleRadios2" value="option2">
+                  RNA
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="row">
+                <h4>Strands</h4>
+              </div>
+              <div class="row" style="padding-left: 15px;">
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="forward" checked>
+                    Forward
+                    <span class="form-check-sign">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+                <div class="form-check" style="padding-left: 20px;">
+                  <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="reverse" checked>
+                    Reverse
+                    <span class="form-check-sign">
+                      <span class="check"></span>
+                    </span>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <h4>Genetic Codes</h4>
+            
+              </div>
+              <div class="row">
+                  <select class="selectpicker" name="gencode" data-style="select-with-transition" title="Select" data-size="10">
+                    <option disabled>Standard</option>
+                    <option value="2">Vertebrate mitochondrial</option>
+                    <option value="3">Yeast mitochondrial </option>
+                    <option value="4">Mold, protozoan and coelenterate mitochondrial, mycoplasma/spiroplasma </option>
+                    <option value="5">Invertebrate mitochondrial </option>
+                    <option value="6">Ciliate, dasycladacean and hexamita nuclear </option>
+                    <option value="7">Echinoderm and flatworm mitochondrial </option>
+                    <option value="8">Euplotid nuclear </option>
+                    <option value="9">Alternative yeast nuclear </option>
+                    <option value="10">Ascidian mitochondrial </option>
+                    <option value="11">Alternative flatworm mitochondrial </option>
+                    <option value="12">Blepharisma nuclear </option>
+                    <option value="13">Chlorophycean mitochondrial </option>
+                    <option value="14">Trematode mitochondrial </option>
+                    <option value="15">Scenedesmus obliquus mitochondrial </option>
+                    <option value="16">Pterobranchia mitochondrial </option>
+                  </select>
+              </div>
+              
+              <div class="submit text-center" style="padding-top: 40px;">
+                <input type="submit" class="btn btn-info btn-raised btn-round" value="Translate">
+                <button type="reset" class="btn btn-danger btn-fab btn-round">
+                  <i class="material-icons">refresh</i>
+                </button>
+              </div>
+            </form>

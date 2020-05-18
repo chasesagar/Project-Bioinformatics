@@ -1,0 +1,158 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}<title>Molecular Weight</title> {% endblock %}
+
+{% block body %}<body class="profile-page sidebar-collapse">{% endblock %}
+
+{% block content %}
+
+  <div class="page-header header-filter header-small" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h1 style="font-family: 'Work Sans', Arial, sans-serif;"><strong style="font-weight: 600;">Molecular</strong> Weight</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="contact-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-8">
+            <form role="form" id="contact-form" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+              {% for message in messages %}
+                <h5 class="text-danger">{{message}}</h5>
+              {% endfor %}
+              {% csrf_token %}
+              <div class="form-group label-floating">
+                <label class="form-control-label bmd-label-floating" for="message"> Please enter DNA or RNA or Protein sequence</label>
+                <textarea class="form-control" rows="7" id="message" name="sequence" required>{{seq}}</textarea>
+                <span class="bmd-help">Without Spacing</span>
+              </div>
+              <div class="row">
+                <h4>Sequence Type (Optional)</h4>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="DNA" id="exampleRadios1" value="option1" checked>
+                  DNA
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>              
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="DNA" id="exampleRadios2" value="option2">
+                  RNA
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              <div class="form-check">
+                <label class="form-check-label">
+                  <input class="form-check-input" type="radio" name="DNA" id="exampleRadios2" value="option2">
+                  Protein
+                  <span class="circle">
+                    <span class="check"></span>
+                  </span>
+                </label>
+              </div>
+              
+              <div class="row">
+                <div class="col-sm-4">
+                  <h4>Strand</h4>
+                </div>
+                <div class="col-sm-8">
+                  <select class="selectpicker" name="strand" data-style="select-with-transition" title="Select" data-size="10">
+                    <option value="single" selected>Single</option>
+                    <option value="double">Double</option>
+                  </select>
+                  
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-4">
+                  <h4>Molecule Type</h4>
+                </div>
+                <div class="col-sm-8">
+                  <select class="selectpicker" name="type" data-style="select-with-transition" title="Select" data-size="10">
+                    <option value="linear" selected>Linear</option>
+                    <option value="circular">Circular</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div class="submit text-center" style="padding-top: 40px;">
+                <input type="submit" class="btn btn-info btn-raised btn-round" value="Translate">
+                <button type="reset" class="btn btn-danger btn-fab btn-round">
+                  <i class="material-icons">refresh</i>
+                </button>
+              </div>
+            </form>
+          </div>
+
+          <div class="col-md-4 ml-auto">
+              <div class="card bg-danger">
+                <div class="card-body">
+                  <h5 class="card-category card-category-social">
+                    <i class="fa fa-newspaper-o"></i> Molecular Weight is 
+                  </h5>
+                  <h4 class="card-title">
+                    <a>{{molwt}} Da</a>
+                  </h4>
+                  <p class="card-description">
+                    <strong style="font-weight: bold;">{{seqtype}}</strong> Sequence having <strong style="font-weight: bold;">Length {{len}} bp</strong> treated as <strong style="font-weight: bold;">{{strand}}</strong> standed and <strong style="font-weight: bold;">{{moltype}}</strong> molecules.
+                  </p>
+                  
+                </div>
+              </div>
+              <div class="rotating-card-container">
+                <div class="card card-rotate">
+                  <div class="front">
+                    <div class="card-body">
+                      <h5 class="card-category card-category-social text-success">
+                        <i class="fa fa-newspaper-o"></i> Other tools
+                      </h5>
+                      <h4 class="card-title">
+                        <a href="{% url 'transcribe' %}">Transcription</a>
+                      </h4>
+                      <h4 class="card-title">
+                        <a href="{% url 'rev-comp' %}">Reverse Complement</a>
+                      </h4>
+                      <h4 class="card-title">
+                        <a href="{% url 'translate' %}">Translation</a>
+                      </h4>
+                      <h4 class="card-title">
+                        <a href="{% url 'rev-comp' %}">Reverse Complement</a>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="back">
+                    <div class="card-body">
+                      <h5 class="card-title">
+                        Do more...
+                      </h5>
+                      <p class="card-description">
+                        Return home by clicking here ...
+                      </p>
+                      <div class="footer text-center">
+                        <a href="{% url 'home' %}" class="btn btn-rose btn-round">
+                          <i class="material-icons">subject</i> Home
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,288 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}<title>Basic Tool</title> {% endblock %}
+
+{% block body %}<body class="profile-page sidebar-collapse">{% endblock %}
+
+{% block content %}
+
+<div class="page-header header-filter" data-parallax="true" style="background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);"></div>
+  <div class="main main-raised">
+    <div class="profile-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 ml-auto mr-auto">
+            <div class="profile-tabs">
+              <ul class="nav nav-pills nav-pills-rose justify-content-center" role="tablist">
+                <!--
+                                                        color-classes: "nav-pills-primary", "nav-pills-info", "nav-pills-success", "nav-pills-warning","nav-pills-danger"
+                                                -->
+                <li class="nav-item">
+                  <a class="nav-link active show" href="#dna" role="tab" data-toggle="tab">DNA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#rna" role="tab" data-toggle="tab">RNA</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#protein" role="tab" data-toggle="tab">PROTEIN</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <!-- DNA active pill -->
+        <div class="tab-content tab-space">
+          <div class="tab-pane active work" id="dna">
+            <div class="row">
+              <div class="col-sm-8">
+                <form id="dna" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+                  {% for message in messages %}
+                    <h5 class="text-danger">{{message}}</h5>
+                  {% endfor %}
+                  {% csrf_token %}
+                  <div class="form-group label-floating">
+                    <label class="form-control-label bmd-label-floating" for="message"> Please enter DNA sequence</label>
+                    <textarea class="form-control" rows="8" id="message" name="seq" required></textarea>
+                    <span class="bmd-help">Without Spacing</span>
+                  </div>
+                  <div class="card bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-category card-category-social">
+                        <i class="fa fa-newspaper-o"></i> Sequence Length
+                      </h5>
+                      <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{seq_length}}</b>Bp</li>
+                        </ul>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="submit text-center" style="padding-top: 40px;">
+                    <input type="submit" class="btn btn-info btn-raised btn-round" value="Calculate" name="dnaform">
+                    <button type="reset" class="btn btn-danger btn-fab btn-round">
+                      <i class="material-icons">refresh</i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="col-md-4 ml-auto">
+                <div class="card bg-success">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Nucleobases Count
+                    </h5>
+                    <h4 class="card-title">
+                      <ul class="list-unstyled">
+                        <li><b>{{a}}</b> Adenine</li>
+                        <li><b>{{c}}</b> Cytosine</li>
+                        <li><b>{{g}}</b> Guanine</li>
+                        <li><b>{{t}}</b> Thymine</li>
+                      </ul>
+                    </h4>
+                  </div>
+                </div>
+                <div class="card bg-warning">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> GC Content
+                    </h5>
+                    <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{GC_Content}}</b> % </li>
+                        </ul>
+                    </h4>
+                  </div>
+                </div>
+                <div class="card bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Molecular Weight
+                    </h5>
+                    <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{molecular_weight}}</b> Da</li>
+                        </ul>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>      
+          <!-- RNA pill -->
+          <div class="tab-pane rna" id="rna">
+            <div class="row">
+              <div class="col-sm-8">
+                <form id="rna" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+                  {% for message in messages %}
+                    <h5 class="text-danger">{{message}}</h5>
+                  {% endfor %}
+                  {% csrf_token %}
+                  <div class="form-group label-floating">
+                    <label class="form-control-label bmd-label-floating" for="message"> Please enter RNA sequence</label>
+                    <textarea class="form-control" rows="8" id="message" name="seq" required></textarea>
+                    <span class="bmd-help">Without Spacing</span>
+                  </div>
+                  <div class="card bg-dark">
+                    <div class="card-body">
+                      <h5 class="card-category card-category-social">
+                        <i class="fa fa-newspaper-o"></i> Sequence Length
+                      </h5>
+                      <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{seq_length_rna}}</b>Bp</li>
+                        </ul>
+                      </h4>
+                    </div>
+                  </div>
+                  <div class="submit text-center" style="padding-top: 40px;">
+                    <input type="submit" class="btn btn-info btn-raised btn-round" value="Calculate" name="rnaform">
+                    <button type="reset" class="btn btn-danger btn-fab btn-round">
+                      <i class="material-icons">refresh</i>
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="col-md-4 ml-auto">
+                <div class="card bg-success">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Nucleobases Count
+                    </h5>
+                    <h4 class="card-title">
+                      <ul class="list-unstyled">
+                        <li><b>{{A_rna}}</b> Adenine</li>
+                        <li><b>{{C_rna}}</b> Cytosine</li>
+                        <li><b>{{G_rna}}</b> Guanine</li>
+                        <li><b>{{U_rna}}</b> Uracil</li>
+                      </ul>
+                    </h4>
+                  </div>
+                </div>
+                <div class="card bg-warning">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> GC Content
+                    </h5>
+                    <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{gc_rna}}</b> % </li>
+                        </ul>
+                    </h4>
+                  </div>
+                </div>
+                <div class="card bg-primary">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Molecular Weight
+                    </h5>
+                    <h4 class="card-title">
+                        <ul class="list-unstyled">
+                          <li><b>{{molwt_rna}}</b> Da</li>
+                        </ul>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+          <!-- protein pill -->
+          <div class="tab-pane protein" id="protein">
+            <div class="row">
+              <div class="col-sm-8">
+                <form role="form" id="rna" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+                  {% for message in messages %}
+                    <h5 class="text-danger">{{message}}</h5>
+                  {% endfor %}
+                  {% csrf_token %}
+                  <div class="form-group label-floating">
+                    <label class="form-control-label bmd-label-floating" for="message"> Please enter Protein sequence</label>
+                    <textarea class="form-control" rows="8" id="message" name="seq" required>{{my_protein}}</textarea>
+                    <span class="bmd-help">Without Spacing</span>
+                  </div>
+                  <div class="submit text-center" style="padding-top: 40px;">
+                    <input type="submit" class="btn btn-info btn-raised btn-round" value="Calculate" name="proteinform">
+                    <button type="reset" class="btn btn-danger btn-fab btn-round">
+                      <i class="material-icons">refresh</i>
+                    </button>
+                  </div>
+                </form>
+                <div class="row">
+                  <div class="col-sm-6">
+                    <div class="card bg-dark">
+                      <div class="card-body">
+                        <h5 class="card-category card-category-social">
+                          <i class="fa fa-newspaper-o"></i> Sequence Length
+                        </h5>
+                        <h4 class="card-title">
+                          <ul class="list-unstyled">
+                            <li><b>{{seq_length_protein}}</b>Bp</li>
+                          </ul>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-sm-6">
+                    <div class="card bg-primary">
+                      <div class="card-body">
+                        <h5 class="card-category card-category-social">
+                          <i class="fa fa-newspaper-o"></i> Molecular Weight
+                        </h5>
+                        <h4 class="card-title">
+                            <ul class="list-unstyled">
+                              <li><b>{{molwt_protein}}</b> Da</li>
+                            </ul>
+                        </h4>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-md-4 ml-auto">
+                <div class="card bg-success">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Amino Acid Count
+                    </h5>
+                    <h4 class="card-title">
+                      <ul class="list-unstyled">
+                        <li><b>{{a_pro}}</b> A</li>
+                        <li><b>{{c_pro}}</b> C</li>
+                        <li><b>{{d_pro}}</b> D</li>
+                        <li><b>{{e_pro}}</b> E</li>
+                        <li><b>{{f_pro}}</b> F</li>
+                        <li><b>{{g_pro}}</b> G</li>
+                        <li><b>{{h_pro}}</b> H</li>
+                        <li><b>{{i_pro}}</b> I</li>
+                        <li><b>{{k_pro}}</b> K</li>
+                        <li><b>{{l_pro}}</b> L</li>
+                        <li><b>{{m_pro}}</b> M</li>
+                        <li><b>{{n_pro}}</b> N</li>
+                        <li><b>{{o_pro}}</b> O</li>
+                        <li><b>{{p_pro}}</b> P</li>
+                        <li><b>{{q_pro}}</b> Q</li>
+                        <li><b>{{r_pro}}</b> R</li>
+                        <li><b>{{s_pro}}</b> S</li>
+                        <li><b>{{t_pro}}</b> T</li>
+                        <li><b>{{u_pro}}</b> U</li>
+                        <li><b>{{v_pro}}</b> V</li>
+                        <li><b>{{w_pro}}</b> W</li>
+                        <li><b>{{y_pro}}</b> Y</li>
+                      </ul>
+                    </h4>
+                  </div>
+                </div>
+              </div>
+            </div> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

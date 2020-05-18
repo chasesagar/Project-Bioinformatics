@@ -1,0 +1,178 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="{% static 'img/apple-icon.png' %}">
+  <link rel="icon" type="image/png" href="{% static 'img/favicon.png' %}">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  {% block title %}<title>Chase Biology</title>{% endblock%}
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+
+  <!--  Social tags      -->
+  <meta name="keywords" content="bootstrap 4, bootstrap 4 uit kit, bootstrap 4 kit, material, material kit, creative tim, html kit, html css template, web template, bootstrap, bootstrap 4, css3 template, frontend, responsive bootstrap template, bootstrap ui kit, responsive ui kit, premium bootstrap 4 ui kit, premium template, bootstrap 4 template">
+  <meta name="description" content="">
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="product">
+  <meta name="twitter:site" content="@sagar__saini">
+  <meta name="twitter:title" content="Minimal by Chase Sagar">
+  <meta name="twitter:description" content="">
+  <meta name="twitter:creator" content="@sagar__saini">
+  <meta name="twitter:image" content="">
+
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Work+Sans:100,200,300,400,700,800|Material+Icons" />
+   <!-- added font which i left earlier-->
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+  <link rel="stylesheet" href="{% static '/css/font-awesome.min.css' %}">
+  
+ <!-- CSS Files -->
+ <link href="{% static 'css/material-kit.mind1f1.css' %}" rel="stylesheet" />
+
+</head>
+
+<!-- adding block for different body contents -->
+{% block body %}<body class="landing-page sidebar-collapse">{% endblock %} 
+
+  <!-- Navigation Bar -->
+  
+  <nav class="navbar navbar-color-on-scroll navbar-transparent    fixed-top  navbar-expand-lg " color-on-scroll="100" id="sectionsNav" style="font-family: 'Work Sans', Arial, sans-serif;">
+    <div class="container">
+      <div class="navbar-translate">
+        <a class="navbar-brand" href="{% url 'home' %}"><strong style="font-weight: 550;">CHASEBIO</strong></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ml-auto">
+
+          <li class="dropdown nav-item">
+            <a href="{% url 'home' %}" class="nav-link">
+              <i class="material-icons">home</i> home
+            </a>
+          </li>
+
+          <li class="dropdown nav-item">
+            <a href="{% url 'about' %}" class="nav-link">
+              <i class="material-icons">information</i> About
+            </a>
+          </li>
+          
+          <li class="dropdown nav-item">
+            <a href="{% url 'basic' %}" class="nav-link">
+              <i class="material-icons">view_day</i> Basic
+            </a>
+          </li>
+
+          <li class="dropdown nav-item">
+            <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+              <i class="material-icons">view_carousel</i> Tools
+            </a>
+            <div class="dropdown-menu dropdown-with-icons">
+              <a href="{% url 'translate' %}" class="dropdown-item">
+                <i class="material-icons">view_stream</i> Translate
+              </a>
+              <a href="{% url 'rev-comp' %}" class="dropdown-item">
+                <i class="material-icons">art_track</i> Reverse Complement
+              </a>
+              <a href="{% url 'molwt' %}" class="dropdown-item">
+                <i class="material-icons">view_quilt</i> Molecular Weight
+              </a>
+              <a href="{% url 'transcribe' %}" class="dropdown-item">
+                <i class="material-icons">view_day</i> Transcription
+              </a>
+              <a href="{% url 'back-transcribe' %}" class="dropdown-item">
+                <i class="material-icons">view_agenda</i> Back Transcription
+              </a>
+              
+            </div>
+          </li>
+          <li class="dropdown nav-item">
+            <a href="{% url 'contact' %}" class="nav-link">
+              <i class="material-icons">location_on</i> contact
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+  {% block content %} {% endblock %}
+
+  <!-- Footer -->
+  <!-- Cannot Be Removed contains copyright CC Sagar Saini -->
+  <footer class="footer footer-white footer-big">
+    <div class="container">
+      <hr>
+      <ul class="social-buttons">
+        <li>
+          <a href="https://www.linkedin.com/in/chasesagar" target="blank" class="btn btn-just-icon btn-round btn-linkedin">
+            <i class="fa fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://github.com/chasesagar" target="blank" class="btn btn-just-icon btn-round btn-github">
+            <i class="fa fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/sagar__saini" target="blank" class="btn btn-just-icon btn-round btn-dribbble">
+            <i class="fa fa-instagram"></i>
+          </a>
+        </li>
+        <li>
+          <a href="https://www.fa-facebook.com/chasesagar" target="blank" class="btn btn-just-icon btn-round btn-facebook">
+            <i class="fa fa-facebook"></i>
+          </a>
+        </li>
+      </ul>
+      <div class="copyright pull-center">
+        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Design and Developed with <i class="icon-heart" aria-hidden="true"></i> by <a class="text-info" href="https://www.linkedin.com/in/chasesagar" target="_blank"><strong>chasesagar</strong></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--   Core JS Files   -->
+  <script src="{% static 'js/core/jquery.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/core/popper.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/core/bootstrap-material-design.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'js/plugins/moment.min.js' %}"></script>
+  <!--	Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
+  <script src="{% static 'js/plugins/bootstrap-datetimepicker.js' %}" type="text/javascript"></script>
+  <!--  Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
+  <script src="{% static 'js/plugins/nouislider.min.js' %}" type="text/javascript"></script>
+  <!--  Google Maps Plugin    -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2Yno10-YTnLjjn_Vtk0V8cdcY5lC4plU"></script>
+  <!--	Plugin for Sharrre btn -->
+  <script src="{% static 'js/plugins/jquery.sharrre.js' %}" type="text/javascript"></script>
+  <!--	Plugin for Tags, full documentation here: https://github.com/bootstrap-tagsinput/bootstrap-tagsinputs  -->
+  <script src="{% static 'js/plugins/bootstrap-tagsinput.js' %}"></script>
+  <!--	Plugin for Select, full documentation here: http://silviomoreto.github.io/bootstrap-select -->
+  <script src="{% static 'js/plugins/bootstrap-selectpicker.js' %}" type="text/javascript"></script>
+  <!--	Plugin for Fileupload, full documentation here: http://www.jasny.net/bootstrap/javascript/#fileinput -->
+  <script src="{% static 'js/plugins/jasny-bootstrap.min.js' %}" type="text/javascript"></script>
+  <!--	Plugin for Small Gallery in Product Page -->
+  <script src="{% static 'js/plugins/jquery.flexisel.js' %}" type="text/javascript"></script>
+
+
+
+  <!-- Control Center for Material Kit: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'js/material-kit.mind1f1.js' %}" type="text/javascript"></script>
+
+  <!-- snipp Js Files -->
+  <script src="{% static 'js/particles.min.js' %}"></script>
+  <script src="{% static 'js/particle.js' %}"></script>
+  <!-- end snipp Js Files -->
+
+</body>
+
+</html>
+
+

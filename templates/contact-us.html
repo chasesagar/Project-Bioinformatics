@@ -1,0 +1,99 @@
+{% extends "base.html" %} <!-- Extending base.html file and including it here -->
+{% load static %}
+{% block title %}<title>Contact Us</title> {% endblock %} <!-- Main title of the page -->
+
+<!-- here we are not using body django content because we want default content here -->
+{% block body %}<body class="about-us sidebar-collapse">{% endblock %}
+
+{% block content %}
+  <div class="page-header header-small" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div id="particles-js"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h1 style="font-family: 'Work Sans', Arial, sans-serif;"><strong style="font-weight: 600;">Contact</strong> Us</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="contact-content">
+      <div class="container">
+        
+        <div class="row">
+          <div class="col-sm-8" style="padding-top: 50px; padding-left: 30px; padding-right: 80px;">
+            <h2 style="font-weight: 600;">Send us a message</h2>
+            <p class="description">You can contact us with anything related to our Products. We&apos;ll get in touch with you as soon as possible.<br><br>
+            </p>
+            <form role="form">
+              <div class="form-group">
+                <label for="name" class="bmd-label-floating">Your name</label>
+                <input type="text" class="form-control" id="name">
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmails" class="bmd-label-floating">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmails">
+                <span class="bmd-help">We'll never share your email with anyone else.</span>
+              </div>
+              <div class="form-group">
+                <label for="phone" class="bmd-label-floating">Phone</label>
+                <input type="text" class="form-control" id="phone">
+              </div>
+              <div class="form-group label-floating">
+                <label class="form-control-label bmd-label-floating" for="message"> Your message</label>
+                <textarea class="form-control" rows="6" id="message"></textarea>
+              </div>
+              <div class="submit text-center">
+                <input type="submit" class="btn btn-primary btn-raised btn-round" value="Contact Us">
+              </div>
+            </form>
+          </div>
+          <div class="col-md-4" style="padding-top: 50px;">
+            <div class="card">
+              <div class="card-body ">
+                <h6 class="card-category text-danger">
+                  <i class="material-icons">phone</i> Give us a ring
+                </h6>
+                <h4 class="card-title" style="padding-left: 30px;">
+                  +91 8826449101
+                </h4>
+                <h4 class="card-title" style="padding-left: 30px;">
+                  +91 7678106791
+                </h4>
+              </div>
+              <div class="card-footer ">
+                <div class="author">
+                  <a href="#pablo">
+                    <img src="{% static 'img/faces/sagar.jpg' %}" alt="..." class="avatar img-raised">
+                    <span>Sagar Saini</span>
+                  </a>
+                </div>
+                <div class="stats ml-auto">
+                  <i class="material-icons">watch_later</i> Mon-Fri 10am-5pm
+                </div>
+              </div>
+            </div>
+            <div class="card card-blog">
+              <div class="card-header card-header-image">
+                <a href="{% url 'about' %}">
+                  <img class="img" src="{% static 'img/nsit.png' %}">
+                </a>
+              </div>
+              <div class="card-body ">
+                <h6 class="card-category text-success">Find us at the office</h6>
+                <h4 class="card-title">
+                  <a>NSIT Sector 3 Dwarka
+                    New Delhi-110078, India.</a>
+                </h4>
+                <p class="card-description">
+                  Netaji Subhas University of Technology (NSUT) New Delhi, formerly known as Netaji Subhas Institute of Technology (NSIT), approved by Ministry of Human Resources Development (MHRD), Govt. of India, recognized by Govt. of NCT of Delhi
+                </p>
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}

@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}<title>Translate Result</title> {% endblock %}
+
+{% block body %}<body class="">{% endblock %}
+
+{% block content %}
+
+  <div class="page-header header-filter header-small" data-parallax="true" style="background: linear-gradient(45deg, #33ccff 0%, #ff99cc 100%);">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto text-center">
+          <h1 style="font-family: 'Work Sans', Arial, sans-serif;"><strong style="font-weight: 600;">Translate</strong> Result</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="main main-raised">
+    <div class="contact-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category text-danger" style="font-weight: bold;">
+                  5'3 Frame 3
+                </h4>
+                <h6 style="font-size: 14px;">
+                  {{trans_three}}
+                </h6>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category text-danger" style="font-weight: bold;">
+                  5'3 Frame 2
+                </h4>
+                <h6 style="font-size: 14px;">
+                  {{trans_two}}
+                </h6>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h4 class="card-category text-danger" style="font-weight: bold;">
+                  5'3 Frame 1
+                </h4>
+                <h6 style="font-size: 14px;">
+                  {{trans_one}}
+                </h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="testimonials-2 section-dark">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-body ">
+              <h4 class="card-category text-danger" style="font-weight: bold;">
+                5'3 RNA Sequence
+              </h4>
+              <h6 style="font-size: 14px;">
+                {{my_seq}}
+              </h6>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body ">
+              <h6 style="font-size: 14px;">
+                {{my_seq_comp}}
+              </h6>
+              <h4 class="card-category text-success" style="font-weight: bold;">
+                3'5 RNA Sequence
+              </h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="main main-raised">
+    <div class="about-content">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body ">
+                <h6 style="font-size: 14px;">
+                  {{comp_one}}
+                </h6>
+                <h4 class="card-category text-success" style="font-weight: bold;">
+                  3'5 Frame 1
+                </h4>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h6 style="font-size: 14px;">
+                  {{comp_two}}
+                </h6>
+                <h4 class="card-category text-success" style="font-weight: bold;">
+                  3'5 Frame 2
+                </h4>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-body ">
+                <h6 style="font-size: 14px;">
+                  {{comp_three}}
+                </h6>
+                <h4 class="card-category text-success" style="font-weight: bold;">
+                  3'5 Frame 3
+                </h4>
+              </div>
+            </div>
+            <form action="{% url 'translate' %}">
+              <div class="submit text-center" style="padding-top: 40px;">
+                <input type="submit"  class="btn btn-danger btn-raised btn-round" value="New Translate">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
