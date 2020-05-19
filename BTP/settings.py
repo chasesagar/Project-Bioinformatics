@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '_&j87lugbi8974)5w#zhg4$kfyl*ykl2eqxlq9-l*cjup@v%k-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['chasebio.herokuapp.com', '127.0.0.1']
 

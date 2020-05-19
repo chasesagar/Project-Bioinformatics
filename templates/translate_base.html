@@ -22,11 +22,12 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-8">
-            <form role="form" id="contact-form" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+            <form id="translate" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+              {% csrf_token %}
               {% for message in messages %}
                 <h5 class="text-danger">{{message}}</h5>
               {% endfor %}
-              {% csrf_token %}
+              
               <div class="form-group label-floating">
                 <label class="form-control-label bmd-label-floating" for="message"> Please enter DNA or RNA sequence</label>
                 <textarea class="form-control" rows="7" id="message" name="sequence" required></textarea>
