@@ -44,7 +44,7 @@
                   {% csrf_token %}
                   <div class="form-group label-floating">
                     <label class="form-control-label bmd-label-floating" for="message"> Please enter DNA sequence</label>
-                    <textarea class="form-control" rows="8" id="message" name="seq" required></textarea>
+                    <textarea class="form-control" rows="8" id="message" name="seq" required>{{seq}}</textarea>
                     <span class="bmd-help">Without Spacing</span>
                   </div>
                   <div class="card bg-dark">
@@ -122,7 +122,7 @@
                   {% csrf_token %}
                   <div class="form-group label-floating">
                     <label class="form-control-label bmd-label-floating" for="message"> Please enter RNA sequence</label>
-                    <textarea class="form-control" rows="8" id="message" name="seq" required></textarea>
+                    <textarea class="form-control" rows="8" id="message" name="seq" required>{{my_rna}}</textarea>
                     <span class="bmd-help">Without Spacing</span>
                   </div>
                   <div class="card bg-dark">
