@@ -1,1 +1,1 @@
-web: gunicron BTP.wsgi --log-file -
+web: gunicorn BTP.wsgi --log-file -
