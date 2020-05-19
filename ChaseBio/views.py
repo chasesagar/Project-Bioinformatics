@@ -21,7 +21,7 @@ def CustomPageView(request):
             countnuc = validateseq(dnaform)
         
             if countnuc == "error":
-                messages.info(request,'Invalid Sequence')
+                messages.info(request,'Invalid DNA Sequence')
                 return render(request, "basic.html")
 
             else:
@@ -48,7 +48,7 @@ def CustomPageView(request):
             rnaform = request.POST.get('seq')
             my_rna = validaterna(rnaform)
             if my_rna == "error":
-                messages.info(request,'Invalid Sequence')
+                messages.info(request,'Invalid RNA Sequence')
                 return render(request, "basic.html")
             else:
                 data = countrna(my_rna)
