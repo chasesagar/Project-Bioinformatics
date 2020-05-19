@@ -37,7 +37,7 @@
           <div class="tab-pane active work" id="dna">
             <div class="row">
               <div class="col-sm-8">
-                <form id="dna" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+                <form id="dna" action="" method="POST" style="padding-top: 40px; padding-left: 20px; padding-right: 20px;">
                   {% for message in messages %}
                     <h5 class="text-danger">{{message}}</h5>
                   {% endfor %}
@@ -47,18 +47,7 @@
                     <textarea class="form-control" rows="8" id="message" name="seq" required>{{seq}}</textarea>
                     <span class="bmd-help">Without Spacing</span>
                   </div>
-                  <div class="card bg-dark">
-                    <div class="card-body">
-                      <h5 class="card-category card-category-social">
-                        <i class="fa fa-newspaper-o"></i> Sequence Length
-                      </h5>
-                      <h4 class="card-title">
-                        <ul class="list-unstyled">
-                          <li><b>{{seq_length}}</b>Bp</li>
-                        </ul>
-                      </h4>
-                    </div>
-                  </div>
+                  
                   <div class="submit text-center" style="padding-top: 40px;">
                     <input type="submit" class="btn btn-info btn-raised btn-round" value="Calculate" name="dnaform">
                     <button type="reset" class="btn btn-danger btn-fab btn-round">
@@ -66,6 +55,18 @@
                     </button>
                   </div>
                 </form>
+                <div class="card bg-dark">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Sequence Length
+                    </h5>
+                    <h4 class="card-title">
+                      <ul class="list-unstyled">
+                        <li><b>{{seq_length}}</b> Bp</li>
+                      </ul>
+                    </h4>
+                  </div>
+                </div>
               </div>
 
               <div class="col-md-4 ml-auto">
@@ -115,7 +116,7 @@
           <div class="tab-pane rna" id="rna">
             <div class="row">
               <div class="col-sm-8">
-                <form id="rna" action="" method="POST" style="padding: 40px; padding-left: 20px; padding-right: 20px;">
+                <form id="rna" action="" method="POST" style="padding-top: 40px; padding-left: 20px; padding-right: 20px;">
                   {% for message in messages %}
                     <h5 class="text-danger">{{message}}</h5>
                   {% endfor %}
@@ -125,18 +126,6 @@
                     <textarea class="form-control" rows="8" id="message" name="seq" required>{{my_rna}}</textarea>
                     <span class="bmd-help">Without Spacing</span>
                   </div>
-                  <div class="card bg-dark">
-                    <div class="card-body">
-                      <h5 class="card-category card-category-social">
-                        <i class="fa fa-newspaper-o"></i> Sequence Length
-                      </h5>
-                      <h4 class="card-title">
-                        <ul class="list-unstyled">
-                          <li><b>{{seq_length_rna}}</b>Bp</li>
-                        </ul>
-                      </h4>
-                    </div>
-                  </div>
                   <div class="submit text-center" style="padding-top: 40px;">
                     <input type="submit" class="btn btn-info btn-raised btn-round" value="Calculate" name="rnaform">
                     <button type="reset" class="btn btn-danger btn-fab btn-round">
@@ -144,6 +133,18 @@
                     </button>
                   </div>
                 </form>
+                <div class="card bg-dark">
+                  <div class="card-body">
+                    <h5 class="card-category card-category-social">
+                      <i class="fa fa-newspaper-o"></i> Sequence Length
+                    </h5>
+                    <h4 class="card-title">
+                      <ul class="list-unstyled">
+                        <li><b>{{seq_length_rna}}</b> Bp</li>
+                      </ul>
+                    </h4>
+                  </div>
+                </div>
               </div>
 
               <div class="col-md-4 ml-auto">
