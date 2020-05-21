@@ -47,6 +47,7 @@ def validateprotein(protein_seq):
 
 
 def countrna(seq):
+    """Program to count RNA nucleobases """
     tmpfreqdictrna = { "A":0, "C":0, "G":0, "U":0 }
     for nuc in seq:
         tmpfreqdictrna[nuc] += 1
@@ -184,6 +185,13 @@ def molecular_weight(seq, seq_type=None, double_stranded=False, circular=False, 
         raise ValueError("double-stranded proteins await their discovery")
 
     return weight
+
+def translate_seq(self, init_pos=0):
+        """Translates a DNA sequence into an aminoacid sequence"""
+        if self.seq_type == "DNA":
+            return [DNA_Codons[self.seq[pos:pos + 3]] for pos in range(init_pos, len(self.seq) - 2, 3)]
+        elif self.seq_type == "RNA":
+            return [RNA_Codons[self.seq[pos:pos + 3]] for pos in range(init_pos, len(self.seq) - 2, 3)]
 
 
 def six_frame_translations(seq, genetic_code=1):
