@@ -1,10 +1,10 @@
 # Project ChaseBio
-Bioinformatics tools website created using **Django** and front end development tools. Chasebio is a web portal designed by using python, Django, HTML5, CSS3, Bootstrap 4, and Javascript having collection of bioinformatics tools used for research and learning purpose.
+ChaseBio is a **Bioinformatics** tools application/ web-portal which enables solution to some major molecualr biology techniques for example **Central dogma of molecular biology** and many other created using custom python scripts and using **Django framework** and front end development tools. Which resulted in creative, simple, easy to visualize results which can be used research and learning purposes.
 
 
 ## About
 
-Django Python based project which uses many different tools like **Amazon web services, Amazon S3, Amazon RDS, CSS3, HTML5, JavaScript, Heroku, and many more**. Whole idea and motivation for this project is to enable users who wants a portfolio website but doesn't know to code and get started. This web application provide answer to all that questions and it's user friendly, easy to use. And if you are my code a mention would be much apperciated.
+Django Python based project which uses many different tools like **Python, BioPython, CSS3, HTML5, JavaScript, Heroku, and many more**. Whole idea and motivation for this project is to enable researchers and students to understand some biological process easily in more innovative and fun way. This web application provide answer to all that questions and it's user friendly, easy to use. And if you are my code a mention would be much apperciated.
 
 ## Languages and Tools Used:
 
@@ -33,19 +33,26 @@ Django Python based project which uses many different tools like **Amazon web se
 
 ## Demo
 
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (1).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (2).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (3).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (4).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (5).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (6).png)
-![Product Gif](https://github.com/chasesagar/portfolio/blob/master/demo (7).png)
+
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo2.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo3.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo4.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo5.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo6.png" />
+<br>
+<img alt="demo-img" width="auto"   src="https://github.com/chasesagar/chasebio/blob/master/assets/img/sections/demo7.png" />
 
 ## Prerequisite
 
 * Python installed on your machine
 
-* Amazon Web Services(AWS) knowlege and account along with deployment skills using heroku is must for completition of this project.
+* Deployment skills and knowledge using heroku is must for completition of this project.
 
 * Programming knowledge of python, Django, and other front end languages.
 
@@ -82,8 +89,8 @@ python manage.py runserver
 
 ## Quick Start
 
-- [Download from Github](https://github.com/chasesagar/portfolio/archive/master.zip).
-- Clone the repo: `git clone https://github.com/chasesagar/portfolio.git`.
+- [Download from Github](https://github.com/chasesagar/chasebio/archive/master.zip).
+- Clone the repo: `git clone https://github.com/chasesagar/chasebio.git`.
 
 
 
@@ -121,7 +128,7 @@ See also the list of contributors who participated in this project.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/chasesagar/portfolio/blob/master/LICENSE) file for details
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/chasesagar/chasebio/blob/master/LICENSE) file for details
 
 
 
