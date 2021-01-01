@@ -1,4 +1,4 @@
-# Project ChaseBio
+# Project Bioinformatics
 ChaseBio is a **Bioinformatics** tools application/ web-portal which enables solution to some major molecualr biology techniques for example **Central dogma of molecular biology** and many other created using custom python scripts and using **Django framework** and front end development tools. Which resulted in creative, simple, easy to visualize results which can be used research and learning purposes.
 
 
